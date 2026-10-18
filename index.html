@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wherever you go, there you are</title>
+
+  <!-- Підключення відкритих CSS та JS Leaflet для роботи з картами -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+    .card { border: 1px solid #ccc; padding: 15px; border-radius: 8px; margin-bottom: 15px; background: #f9f9f9; }
+    .btn { padding: 8px 15px; font-size: 14px; cursor: pointer; margin-right: 10px; margin-top: 5px; }
+    #map { height: 350px; width: 100%; border-radius: 8px; margin-top: 15px; border: 1px solid #999; }
+    .info { margin-top: 8px; font-weight: bold; }
+    .form-group { margin-top: 10px; }
+    input[type="number"] { padding: 6px; width: 130px; margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Геолокація та Відстеження у Реальному Часі</h1>
+  <p><strong>Студент:</strong> Дебенко Олександр (№3 у журналі)</p>
+
+  <!-- Кнопки відстеження -->
+  <div class="card">
+    <form onsubmit="return false;">
+      <input type="button" id="watch" class="btn" value="Watch me">
+      <input type="button" id="clearWatch" class="btn" value="Clear watch">
+    </form>
+    <div id="location" class="info">Your location will go here.</div>
+    <div id="distance" class="info">Distance from College will go here.</div>
+  </div>
+
+  <!-- Карта -->
+  <div id="map"></div>
+
+  <!-- Введення координат пункту призначення (Завдання 6 & 7) -->
+  <div class="card" style="margin-top: 15px;">
+    <h3>Перехід до пункту призначення</h3>
+    <div class="form-group">
+      <label>Широта (Lat): </label>
+      <input type="number" id="destLat" step="any" placeholder="48.94321" value="48.94321">
+      <label>Довгота (Lng): </label>
+      <input type="number" id="destLng" step="any" placeholder="24.73380" value="24.73380">
+      <button id="btnGoToDest" class="btn">Проскролити карту до призначення</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
